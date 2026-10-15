@@ -39,6 +39,15 @@ struct SettingsView: View {
                 .layoutPriority(1)
             }
 
+            VStack(alignment: .leading, spacing: 10) {
+                Text(model.language == .chinese ? "时间显示" : "Time display")
+                    .font(.headline)
+                Toggle(model.language == .chinese ? "显示日期" : "Show date", isOn: $model.showDate)
+                Toggle(model.language == .chinese ? "显示星期" : "Show day of the week", isOn: $model.showWeekday)
+                Toggle(model.language == .chinese ? "闪烁时间分隔符" : "Flash the time separators", isOn: $model.flashTimeSeparators)
+                Toggle(model.language == .chinese ? "显示秒" : "Display the time with seconds", isOn: $model.showSeconds)
+            }
+
             HStack {
                 Text(model.language == .chinese ? "语言" : "Language")
                 Spacer()
@@ -67,7 +76,7 @@ struct SettingsView: View {
             }
         }
         .padding(24)
-        .frame(minWidth: 480, minHeight: 400)
+        .frame(minWidth: 480, minHeight: 520)
         .onAppear { model.markOnboardingComplete() }
     }
 }

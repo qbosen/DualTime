@@ -6,7 +6,9 @@ DualTime is a native macOS menu bar app that shows a second clock using a config
 
 - English: `Wed Oct 14 09:30`
 - Chinese: `10月14日 周三 09:30`
-- 24-hour time with no seconds
+- 24-hour time with optional seconds
+- Optional date and weekday display
+- Optional flashing time separators
 - Searchable IANA time zone list with common cities pinned first
 - Automatic daylight-saving and UTC-offset handling
 - English and Chinese UI
@@ -35,3 +37,5 @@ xcodebuild -project DualTime.xcodeproj -scheme DualTime -configuration Debug -sd
 ```
 
 The menu bar is managed by macOS. The app requests a variable-width status item and uses the system menu bar font and color, but public APIs cannot guarantee a fixed position directly beside the system clock or force priority over other status items when space is unavailable.
+
+The default display updates at the next minute boundary. Enabling seconds or flashing separators changes the refresh cadence to once per second, which is sufficient for this lightweight single-label status item and avoids unnecessary work in the default mode.

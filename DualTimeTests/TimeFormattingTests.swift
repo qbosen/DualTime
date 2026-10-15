@@ -2,16 +2,57 @@ import XCTest
 @testable import DualTime
 
 final class TimeFormattingTests: XCTestCase {
+    private let epoch = Date(timeIntervalSince1970: 0)
+    private let utc = TimeZone(secondsFromGMT: 0)!
+
     func testEnglishFormatUses24HourClock() {
-        let date = Date(timeIntervalSince1970: 0)
-        let timeZone = TimeZone(secondsFromGMT: 0)!
-        XCTAssertEqual(TimeFormatting.string(from: date, timeZone: timeZone, language: .english), "Thu Jan 1 00:00")
+        XCTAssertEqual(
+            TimeFormatting.string(from: epoch, timeZone: utc, language: .english),
+            "Thu Jan 1 00:00"
+        )
     }
 
     func testChineseFormat() {
-        let date = Date(timeIntervalSince1970: 0)
-        let timeZone = TimeZone(secondsFromGMT: 8 * 60 * 60)!
-        XCTAssertEqual(TimeFormatting.string(from: date, timeZone: timeZone, language: .chinese), "1月1日 周四 08:00")
+        let shanghai = TimeZone(secondsFromGMT: 8 * 60 * 60)!
+        XCTAssertEqual(
+            TimeFormatting.string(from: epoch, timeZone: shanghai, language: .chinese),
+            "1月1日 周四 08:00"
+        )
+    }
+
+    func testDateAndWeekdayCanBeHiddenIndependently() {
+        XCTAssertEqual(
+            TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showDate: false),
+            "Thu 00:00"
+        )
+        XCTAssertEqual(
+            TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showWeekday: false),
+            "Jan 1 00:00"
+        )
+        XCTAssertEqual(
+            TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showDate: false, showWeekday: false),
+            "00:00"
+        )
+    }
+
+    func testSecondsCanBeDisplayed() {
+        let date = Date(timeIntervalSince1970: 45)
+        XCTAssertEqual(
+            TimeFormatting.string(from: date, timeZone: utc, language: .english, showSeconds: true),
+            "Thu Jan 1 00:00:45"
+        )
+    }
+
+    func testSeparatorsCanBeHidden() {
+        XCTAssertEqual(
+            TimeFormatting.string(from: epoch, timeZone: utc, language: .english, separatorsVisible: false),
+            "Thu Jan 1 00 00"
+        )
+    }
+
+    func testNextSecondBoundary() {
+        let date = Date(timeIntervalSince1970: 65.25)
+        XCTAssertEqual(TimeFormatting.nextSecondBoundary(after: date).timeIntervalSince1970, 66, accuracy: 0.001)
     }
 
     func testNextMinuteBoundary() {

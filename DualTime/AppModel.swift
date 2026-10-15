@@ -14,6 +14,18 @@ final class AppModel: ObservableObject {
     @Published var launchAtLogin: Bool {
         didSet { defaults.set(launchAtLogin, forKey: Keys.launchAtLogin); updateLaunchAtLogin() }
     }
+    @Published var showDate: Bool {
+        didSet { defaults.set(showDate, forKey: Keys.showDate); refreshAndReschedule() }
+    }
+    @Published var showWeekday: Bool {
+        didSet { defaults.set(showWeekday, forKey: Keys.showWeekday); refreshAndReschedule() }
+    }
+    @Published var flashTimeSeparators: Bool {
+        didSet { defaults.set(flashTimeSeparators, forKey: Keys.flashTimeSeparators); refreshAndReschedule() }
+    }
+    @Published var showSeconds: Bool {
+        didSet { defaults.set(showSeconds, forKey: Keys.showSeconds); refreshAndReschedule() }
+    }
     @Published private(set) var currentDate = Date()
     @Published private(set) var loginItemError: String?
 
@@ -25,6 +37,10 @@ final class AppModel: ObservableObject {
         static let timeZoneIdentifier = "timeZoneIdentifier"
         static let language = "language"
         static let launchAtLogin = "launchAtLogin"
+        static let showDate = "showDate"
+        static let showWeekday = "showWeekday"
+        static let flashTimeSeparators = "flashTimeSeparators"
+        static let showSeconds = "showSeconds"
         static let didCompleteOnboarding = "didCompleteOnboarding"
     }
 
@@ -39,12 +55,32 @@ final class AppModel: ObservableObject {
             self.language = Locale.current.language.languageCode?.identifier == "zh" ? .chinese : .english
         }
         self.launchAtLogin = defaults.bool(forKey: Keys.launchAtLogin)
+        self.showDate = defaults.object(forKey: Keys.showDate) as? Bool ?? true
+        self.showWeekday = defaults.object(forKey: Keys.showWeekday) as? Bool ?? true
+        self.flashTimeSeparators = defaults.bool(forKey: Keys.flashTimeSeparators)
+        self.showSeconds = defaults.bool(forKey: Keys.showSeconds)
     }
 
     var timeZone: TimeZone { TimeZone(identifier: timeZoneIdentifier) ?? .current }
 
+    var refreshInterval: TimeInterval {
+        (showSeconds || flashTimeSeparators) ? 1 : 60
+    }
+
+    var separatorsVisible: Bool {
+        !flashTimeSeparators || Int(currentDate.timeIntervalSince1970.rounded(.down)) % 2 == 0
+    }
+
     var displayText: String {
-        TimeFormatting.string(from: currentDate, timeZone: timeZone, language: language)
+        TimeFormatting.string(
+            from: currentDate,
+            timeZone: timeZone,
+            language: language,
+            showDate: showDate,
+            showWeekday: showWeekday,
+            showSeconds: showSeconds,
+            separatorsVisible: separatorsVisible
+        )
     }
 
     var timeZoneOptions: [TimeZoneOption] {
@@ -67,7 +103,7 @@ final class AppModel: ObservableObject {
 
     func start() {
         refresh()
-        scheduleNextMinute()
+        scheduleNextRefresh()
         let center = NSWorkspace.shared.notificationCenter
         observers.append(center.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: .main) { [weak self] _ in
             Task { @MainActor in self?.refreshAndReschedule() }
@@ -98,12 +134,16 @@ final class AppModel: ObservableObject {
 
     private func refreshAndReschedule() {
         refresh()
-        scheduleNextMinute()
+        scheduleNextRefresh()
     }
 
-    private func scheduleNextMinute() {
+    private func scheduleNextRefresh() {
         timer?.invalidate()
-        let interval = max(0.1, TimeFormatting.nextMinuteBoundary(after: Date()).timeIntervalSinceNow)
+        let now = Date()
+        let next = refreshInterval == 1
+            ? TimeFormatting.nextSecondBoundary(after: now)
+            : TimeFormatting.nextMinuteBoundary(after: now)
+        let interval = max(0.1, next.timeIntervalSinceNow)
         timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] _ in
             Task { @MainActor in
                 self?.refreshAndReschedule()
