@@ -96,7 +96,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let hosting = NSHostingController(rootView: view)
         let window = NSWindow(contentViewController: hosting)
         window.title = model.language == .chinese ? "DualTime 设置" : "DualTime Settings"
-        window.styleMask = [.titled, .closable]
+        window.styleMask = [.titled, .closable, .resizable]
+        window.minSize = NSSize(width: 480, height: 400)
+        window.setContentSize(NSSize(width: 480, height: 400))
         window.isReleasedWhenClosed = false
         window.center()
         window.delegate = self

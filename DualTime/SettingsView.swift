@@ -17,9 +17,6 @@ struct SettingsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Text(model.language == .chinese ? "DualTime 设置" : "DualTime Settings")
-                .font(.title2.weight(.semibold))
-
             VStack(alignment: .leading, spacing: 8) {
                 Text(model.language == .chinese ? "显示时区" : "Display time zone")
                     .font(.headline)
@@ -38,7 +35,8 @@ struct SettingsView: View {
                     }
                 }
                 .listStyle(.inset)
-                .frame(height: 175)
+                .frame(minHeight: 175, maxHeight: .infinity)
+                .layoutPriority(1)
             }
 
             HStack {
@@ -69,7 +67,7 @@ struct SettingsView: View {
             }
         }
         .padding(24)
-        .frame(width: 480, height: 360)
+        .frame(minWidth: 480, minHeight: 400)
         .onAppear { model.markOnboardingComplete() }
     }
 }
