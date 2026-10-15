@@ -1,3 +1,4 @@
+import AppKit
 import XCTest
 @testable import DualTime
 
@@ -48,6 +49,30 @@ final class TimeFormattingTests: XCTestCase {
             TimeFormatting.string(from: epoch, timeZone: utc, language: .english, separatorsVisible: false),
             "Thu Jan 1 00 00"
         )
+    }
+
+    func testSecondsKeepHourMinuteSeparatorVisibleWhenFlashing() {
+        let date = Date(timeIntervalSince1970: 45)
+        XCTAssertEqual(
+            TimeFormatting.string(from: date, timeZone: utc, language: .english, showSeconds: true, separatorsVisible: false),
+            "Thu Jan 1 00:00 45"
+        )
+    }
+
+    func testMaximumDisplayWidthCoversVisibleAndHiddenSeparators() {
+        let width = TimeFormatting.maximumDisplayWidth(
+            timeZone: utc,
+            language: .english,
+            showDate: true,
+            showWeekday: true,
+            showSeconds: true,
+            font: .menuBarFont(ofSize: 0)
+        )
+        let visible = TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showSeconds: true, separatorsVisible: true)
+        let hidden = TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showSeconds: true, separatorsVisible: false)
+        let visibleWidth = (visible as NSString).size(withAttributes: [.font: NSFont.menuBarFont(ofSize: 0)]).width
+        let hiddenWidth = (hidden as NSString).size(withAttributes: [.font: NSFont.menuBarFont(ofSize: 0)]).width
+        XCTAssertGreaterThanOrEqual(width, max(visibleWidth, hiddenWidth))
     }
 
     func testNextSecondBoundary() {

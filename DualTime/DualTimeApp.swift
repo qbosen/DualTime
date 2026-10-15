@@ -53,6 +53,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var cancellables: Set<AnyCancellable> = []
 
     private func updateStatusItem() {
+        statusItem?.length = model.displayWidth
         statusItem?.button?.title = model.displayText
         statusItem?.button?.toolTip = model.timeZone.identifier
     }

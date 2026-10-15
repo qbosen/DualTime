@@ -15,6 +15,7 @@
 		942C8A4416623C6A0951D582 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516DBE5FD151F7826E22070 /* AppLanguage.swift */; };
 		A168B76FF1FD78511677C25F /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995C311CB76841016DF1F00 /* TimeFormatting.swift */; };
 		C9616A5A74AB2F23AFF92773 /* DualTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC878C18B704E8D0DD3F925 /* DualTimeApp.swift */; };
+		FB4B3EC5FC64985283462595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84742D343193F695BB68FEC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		A995C311CB76841016DF1F00 /* TimeFormatting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
 		AEC878C18B704E8D0DD3F925 /* DualTimeApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DualTimeApp.swift; sourceTree = "<group>"; };
 		B429E93FFE6DE90CBDC89705 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B84742D343193F695BB68FEC /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA9FF99DA9237D2DC24665EF /* DualTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6B6FE41A6EE615A85AF05 /* TimeFormattingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeFormattingTests.swift; sourceTree = "<group>"; };
 		F516DBE5FD151F7826E22070 /* AppLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A995C311CB76841016DF1F00 /* TimeFormatting.swift */,
 				308B5F4F8FB4080E49868861 /* SettingsView.swift */,
 				B429E93FFE6DE90CBDC89705 /* Info.plist */,
+				B84742D343193F695BB68FEC /* Assets.xcassets */,
 			);
 			name = DualTime;
 			path = DualTime;
@@ -191,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4B3EC5FC64985283462595 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

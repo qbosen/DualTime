@@ -6,27 +6,28 @@ import ServiceManagement
 @MainActor
 final class AppModel: ObservableObject {
     @Published var timeZoneIdentifier: String {
-        didSet { defaults.set(timeZoneIdentifier, forKey: Keys.timeZoneIdentifier); refresh() }
+        didSet { defaults.set(timeZoneIdentifier, forKey: Keys.timeZoneIdentifier); recalculateDisplayWidth(); refresh() }
     }
     @Published var language: AppLanguage {
-        didSet { defaults.set(language.rawValue, forKey: Keys.language); refresh() }
+        didSet { defaults.set(language.rawValue, forKey: Keys.language); recalculateDisplayWidth(); refresh() }
     }
     @Published var launchAtLogin: Bool {
         didSet { defaults.set(launchAtLogin, forKey: Keys.launchAtLogin); updateLaunchAtLogin() }
     }
     @Published var showDate: Bool {
-        didSet { defaults.set(showDate, forKey: Keys.showDate); refreshAndReschedule() }
+        didSet { defaults.set(showDate, forKey: Keys.showDate); recalculateDisplayWidth(); refreshAndReschedule() }
     }
     @Published var showWeekday: Bool {
-        didSet { defaults.set(showWeekday, forKey: Keys.showWeekday); refreshAndReschedule() }
+        didSet { defaults.set(showWeekday, forKey: Keys.showWeekday); recalculateDisplayWidth(); refreshAndReschedule() }
     }
     @Published var flashTimeSeparators: Bool {
-        didSet { defaults.set(flashTimeSeparators, forKey: Keys.flashTimeSeparators); refreshAndReschedule() }
+        didSet { defaults.set(flashTimeSeparators, forKey: Keys.flashTimeSeparators); recalculateDisplayWidth(); refreshAndReschedule() }
     }
     @Published var showSeconds: Bool {
-        didSet { defaults.set(showSeconds, forKey: Keys.showSeconds); refreshAndReschedule() }
+        didSet { defaults.set(showSeconds, forKey: Keys.showSeconds); recalculateDisplayWidth(); refreshAndReschedule() }
     }
     @Published private(set) var currentDate = Date()
+    @Published private(set) var displayWidth: CGFloat = 0
     @Published private(set) var loginItemError: String?
 
     private let defaults: UserDefaults
@@ -59,6 +60,8 @@ final class AppModel: ObservableObject {
         self.showWeekday = defaults.object(forKey: Keys.showWeekday) as? Bool ?? true
         self.flashTimeSeparators = defaults.bool(forKey: Keys.flashTimeSeparators)
         self.showSeconds = defaults.bool(forKey: Keys.showSeconds)
+        self.displayWidth = 0
+        recalculateDisplayWidth()
     }
 
     var timeZone: TimeZone { TimeZone(identifier: timeZoneIdentifier) ?? .current }
@@ -131,6 +134,17 @@ final class AppModel: ObservableObject {
     }
 
     private func refresh() { currentDate = Date() }
+
+    private func recalculateDisplayWidth() {
+        displayWidth = TimeFormatting.maximumDisplayWidth(
+            timeZone: timeZone,
+            language: language,
+            showDate: showDate,
+            showWeekday: showWeekday,
+            showSeconds: showSeconds,
+            font: NSFont.menuBarFont(ofSize: 0)
+        )
+    }
 
     private func refreshAndReschedule() {
         refresh()
