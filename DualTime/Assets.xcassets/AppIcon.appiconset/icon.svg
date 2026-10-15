@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <title>DualTime</title>
   <desc>Two simple clocks showing two time zones</desc>
-  <rect width="1024" height="1024" rx="224" fill="#111111"/>
-  <circle cx="430" cy="430" r="264" fill="none" stroke="#FFFFFF" stroke-width="72"/>
-  <path d="M430 430V270M430 430L560 500" fill="none" stroke="#FFFFFF" stroke-width="56" stroke-linecap="round"/>
-  <circle cx="430" cy="430" r="28" fill="#FFFFFF"/>
-  <circle cx="704" cy="704" r="174" fill="#111111" stroke="#FFFFFF" stroke-width="56"/>
-  <path d="M704 704V596M704 704L784 750" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
-  <circle cx="704" cy="704" r="22" fill="#FFFFFF"/>
+  <rect width="1024" height="1024" rx="224" fill="#F7F7F5"/>
+  <rect x="4" y="4" width="1016" height="1016" rx="220" fill="none" stroke="#D9D9D4" stroke-width="8"/>
+  <circle cx="430" cy="430" r="264" fill="none" stroke="#111111" stroke-width="72"/>
+  <path d="M430 430V270M430 430L560 500" fill="none" stroke="#111111" stroke-width="56" stroke-linecap="round"/>
+  <circle cx="430" cy="430" r="28" fill="#111111"/>
+  <circle cx="704" cy="704" r="174" fill="#F7F7F5" stroke="#111111" stroke-width="56"/>
+  <path d="M704 704V596M704 704L784 750" fill="none" stroke="#111111" stroke-width="42" stroke-linecap="round"/>
+  <circle cx="704" cy="704" r="22" fill="#111111"/>
 </svg>

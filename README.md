@@ -19,7 +19,7 @@ DualTime is a native macOS menu bar app that shows a second clock using a config
 ## Requirements
 
 - macOS 14 or later
-- Apple Silicon
+- Apple Silicon or Intel Mac
 - Xcode 26 or later for the included project
 
 ## Build
@@ -28,7 +28,7 @@ DualTime is a native macOS menu bar app that shows a second clock using a config
 xcodebuild -project DualTime.xcodeproj -scheme DualTime -configuration Release -sdk macosx -derivedDataPath .build CODE_SIGNING_ALLOWED=NO build
 ```
 
-The local arm64 app is available at `dist/DualTime.app`. It is unsigned and intended for local use.
+The local Universal 2 app, containing `arm64` and `x86_64` slices, is available at `dist/DualTime.app`. It is unsigned and intended for local use.
 
 ## Tests
 
