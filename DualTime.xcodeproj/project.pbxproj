@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		057012FE805BE3DA8C8DEAFA /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D236BBE81562A4EF48C34A6 /* AppModel.swift */; };
+		0A6BFB61BE63AB276B788C1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B67F15B6ADA65E050419F0 /* Cocoa.framework */; };
+		0A705DF8B4BE97BBBCBE2BB1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B67F15B6ADA65E050419F0 /* Cocoa.framework */; };
+		1F0B16A802D9C877DBCE7746 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B5F4F8FB4080E49868861 /* SettingsView.swift */; };
+		22BF260CE7CB60FD4A1C8F40 /* TimeFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B6FE41A6EE615A85AF05 /* TimeFormattingTests.swift */; };
+		942C8A4416623C6A0951D582 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516DBE5FD151F7826E22070 /* AppLanguage.swift */; };
+		A168B76FF1FD78511677C25F /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995C311CB76841016DF1F00 /* TimeFormatting.swift */; };
+		C9616A5A74AB2F23AFF92773 /* DualTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC878C18B704E8D0DD3F925 /* DualTimeApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27227A774A2A3A556231ED9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5413DCB050B1FCC46C38CA1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1283409FD38606CF8C64B490;
+			remoteInfo = DualTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		012C003D25E46A159C51F058 /* DualTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D236BBE81562A4EF48C34A6 /* AppModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		308B5F4F8FB4080E49868861 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		53B67F15B6ADA65E050419F0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		A995C311CB76841016DF1F00 /* TimeFormatting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
+		AEC878C18B704E8D0DD3F925 /* DualTimeApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DualTimeApp.swift; sourceTree = "<group>"; };
+		B429E93FFE6DE90CBDC89705 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9FF99DA9237D2DC24665EF /* DualTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB6B6FE41A6EE615A85AF05 /* TimeFormattingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeFormattingTests.swift; sourceTree = "<group>"; };
+		F516DBE5FD151F7826E22070 /* AppLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1ED647AE02AC98A18F53C49E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A6BFB61BE63AB276B788C1E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA8389F5D29EB3622BA3CBFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A705DF8B4BE97BBBCBE2BB1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4706F2C1AEAAC6C758466CE6 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				53B67F15B6ADA65E050419F0 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		4EF2A758B99257933CAACF3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA9FF99DA9237D2DC24665EF /* DualTime.app */,
+				012C003D25E46A159C51F058 /* DualTimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D842132B8BFAD0978FECCA0 /* DualTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6B6FE41A6EE615A85AF05 /* TimeFormattingTests.swift */,
+			);
+			name = DualTimeTests;
+			path = DualTimeTests;
+			sourceTree = "<group>";
+		};
+		8D5396A9F1C067AF19ABB53F = {
+			isa = PBXGroup;
+			children = (
+				4EF2A758B99257933CAACF3A /* Products */,
+				DD8A9408DFC7EB1504A1F7DF /* Frameworks */,
+				B4061B317F1E5F6F1EFF649F /* DualTime */,
+				5D842132B8BFAD0978FECCA0 /* DualTimeTests */,
+			);
+			sourceTree = "<group>";
+		};
+		B4061B317F1E5F6F1EFF649F /* DualTime */ = {
+			isa = PBXGroup;
+			children = (
+				AEC878C18B704E8D0DD3F925 /* DualTimeApp.swift */,
+				F516DBE5FD151F7826E22070 /* AppLanguage.swift */,
+				1D236BBE81562A4EF48C34A6 /* AppModel.swift */,
+				A995C311CB76841016DF1F00 /* TimeFormatting.swift */,
+				308B5F4F8FB4080E49868861 /* SettingsView.swift */,
+				B429E93FFE6DE90CBDC89705 /* Info.plist */,
+			);
+			name = DualTime;
+			path = DualTime;
+			sourceTree = "<group>";
+		};
+		DD8A9408DFC7EB1504A1F7DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4706F2C1AEAAC6C758466CE6 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1283409FD38606CF8C64B490 /* DualTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CF9CB013821A474F7A4121F /* Build configuration list for PBXNativeTarget "DualTime" */;
+			buildPhases = (
+				F6A00B1F217FF82BFAA5838F /* Sources */,
+				1ED647AE02AC98A18F53C49E /* Frameworks */,
+				C0D541D7516AC596CEB0968B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DualTime;
+			productName = DualTime;
+			productReference = CA9FF99DA9237D2DC24665EF /* DualTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D8D7453485DF46AA438BB90 /* DualTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3812EC5448EB2C7110873015 /* Build configuration list for PBXNativeTarget "DualTimeTests" */;
+			buildPhases = (
+				D4B2F7FF055645FFA65D4E06 /* Sources */,
+				BA8389F5D29EB3622BA3CBFC /* Frameworks */,
+				CC5726879942149CADD49AF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9475E27F90244C48E4B5C48D /* PBXTargetDependency */,
+			);
+			name = DualTimeTests;
+			productName = DualTimeTests;
+			productReference = 012C003D25E46A159C51F058 /* DualTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5413DCB050B1FCC46C38CA1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 3E2698AE2E1FF4E3FBCD169A /* Build configuration list for PBXProject "DualTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D5396A9F1C067AF19ABB53F;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4EF2A758B99257933CAACF3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1283409FD38606CF8C64B490 /* DualTime */,
+				2D8D7453485DF46AA438BB90 /* DualTimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0D541D7516AC596CEB0968B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC5726879942149CADD49AF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4B2F7FF055645FFA65D4E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22BF260CE7CB60FD4A1C8F40 /* TimeFormattingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6A00B1F217FF82BFAA5838F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9616A5A74AB2F23AFF92773 /* DualTimeApp.swift in Sources */,
+				942C8A4416623C6A0951D582 /* AppLanguage.swift in Sources */,
+				057012FE805BE3DA8C8DEAFA /* AppModel.swift in Sources */,
+				A168B76FF1FD78511677C25F /* TimeFormatting.swift in Sources */,
+				1F0B16A802D9C877DBCE7746 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9475E27F90244C48E4B5C48D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DualTime;
+			target = 1283409FD38606CF8C64B490 /* DualTime */;
+			targetProxy = 27227A774A2A3A556231ED9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		70D1244AE79A75251938077E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		71D2E3BC23146E85F1C0DD0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DualTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dualtime.menubar;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7A29225A22D34F039F2F3402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DualTime/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dualtime.menubar.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DualTime.app/Contents/MacOS/DualTime";
+			};
+			name = Debug;
+		};
+		84102CF17E9BFEF41657DEA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DualTime/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dualtime.menubar.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DualTime.app/Contents/MacOS/DualTime";
+			};
+			name = Release;
+		};
+		A36F631F6B4150001087B991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E6A359AED64B66E8973EB7B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DualTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dualtime.menubar;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3812EC5448EB2C7110873015 /* Build configuration list for PBXNativeTarget "DualTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84102CF17E9BFEF41657DEA5 /* Release */,
+				7A29225A22D34F039F2F3402 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E2698AE2E1FF4E3FBCD169A /* Build configuration list for PBXProject "DualTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A36F631F6B4150001087B991 /* Debug */,
+				70D1244AE79A75251938077E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CF9CB013821A474F7A4121F /* Build configuration list for PBXNativeTarget "DualTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A359AED64B66E8973EB7B7 /* Release */,
+				71D2E3BC23146E85F1C0DD0F /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5413DCB050B1FCC46C38CA1F /* Project object */;
+}

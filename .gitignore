@@ -1,0 +1,6 @@
+.build/
+DerivedData/
+dist/*.app
+*.xcuserstate
+xcuserdata/
+.DS_Store
