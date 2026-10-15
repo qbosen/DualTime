@@ -142,7 +142,7 @@ final class AppModel: ObservableObject {
             showDate: showDate,
             showWeekday: showWeekday,
             showSeconds: showSeconds,
-            font: NSFont.menuBarFont(ofSize: 0)
+            font: TimeFormatting.statusBarFont
         )
     }
 

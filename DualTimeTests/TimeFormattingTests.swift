@@ -66,12 +66,12 @@ final class TimeFormattingTests: XCTestCase {
             showDate: true,
             showWeekday: true,
             showSeconds: true,
-            font: .menuBarFont(ofSize: 0)
+            font: TimeFormatting.statusBarFont
         )
         let visible = TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showSeconds: true, separatorsVisible: true)
         let hidden = TimeFormatting.string(from: epoch, timeZone: utc, language: .english, showSeconds: true, separatorsVisible: false)
-        let visibleWidth = (visible as NSString).size(withAttributes: [.font: NSFont.menuBarFont(ofSize: 0)]).width
-        let hiddenWidth = (hidden as NSString).size(withAttributes: [.font: NSFont.menuBarFont(ofSize: 0)]).width
+        let visibleWidth = (visible as NSString).size(withAttributes: [.font: TimeFormatting.statusBarFont]).width
+        let hiddenWidth = (hidden as NSString).size(withAttributes: [.font: TimeFormatting.statusBarFont]).width
         XCTAssertGreaterThanOrEqual(width, max(visibleWidth, hiddenWidth))
     }
 

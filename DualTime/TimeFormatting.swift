@@ -2,6 +2,11 @@ import AppKit
 import Foundation
 
 struct TimeFormatting {
+    static var statusBarFont: NSFont {
+        let menuBarFont = NSFont.menuBarFont(ofSize: 0)
+        return NSFont.monospacedDigitSystemFont(ofSize: menuBarFont.pointSize, weight: .regular)
+    }
+
     static func string(
         from date: Date,
         timeZone: TimeZone,
@@ -39,7 +44,7 @@ struct TimeFormatting {
         showDate: Bool,
         showWeekday: Bool,
         showSeconds: Bool,
-        font: NSFont
+        font: NSFont = TimeFormatting.statusBarFont
     ) -> CGFloat {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = timeZone
