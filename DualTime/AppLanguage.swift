@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum AppLanguage: String, CaseIterable, Identifiable {
     case english = "en"
@@ -6,10 +7,17 @@ enum AppLanguage: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var displayName: String {
+    var locale: Locale {
         switch self {
-        case .english: return "English"
-        case .chinese: return "中文"
+        case .english: return Locale(identifier: "en")
+        case .chinese: return Locale(identifier: "zh-Hans")
+        }
+    }
+
+    var displayNameKey: LocalizedStringKey {
+        switch self {
+        case .english: return "language.english"
+        case .chinese: return "language.chinese"
         }
     }
 }

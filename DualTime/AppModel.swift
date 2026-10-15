@@ -65,6 +65,7 @@ final class AppModel: ObservableObject {
     }
 
     var timeZone: TimeZone { TimeZone(identifier: timeZoneIdentifier) ?? .current }
+    var locale: Locale { language.locale }
 
     var refreshInterval: TimeInterval {
         (showSeconds || flashTimeSeparators) ? 1 : 60
@@ -166,7 +167,7 @@ final class AppModel: ObservableObject {
     }
 
     private func localizedName(for identifier: String) -> String {
-        let locale = language == .chinese ? Locale(identifier: "zh_CN") : Locale(identifier: "en_US")
+        let locale = language.locale
         let components = identifier.split(separator: "/").map(String.init)
         let city = components.last?.replacingOccurrences(of: "_", with: " ") ?? identifier
         if let localized = locale.localizedString(forIdentifier: identifier), localized != identifier {

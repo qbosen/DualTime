@@ -60,7 +60,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func updateWindowTitle() {
-        settingsWindowController?.window?.title = model.language == .chinese ? "DualTime 设置" : "DualTime Settings"
+        settingsWindowController?.window?.title = L10n.string("settings.title", locale: model.locale)
     }
 
     @objc private func statusItemClicked(_ sender: NSStatusBarButton) {
@@ -70,11 +70,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         if event.type == .rightMouseUp {
             let menu = NSMenu()
-            let open = NSMenuItem(title: model.language == .chinese ? "打开设置" : "Open Settings", action: #selector(showSettingsFromMenu), keyEquivalent: "")
+            let open = NSMenuItem(title: L10n.string("menu.openSettings", locale: model.locale), action: #selector(showSettingsFromMenu), keyEquivalent: "")
             open.target = self
             menu.addItem(open)
             menu.addItem(.separator())
-            let quit = NSMenuItem(title: model.language == .chinese ? "退出" : "Quit", action: #selector(quitFromMenu), keyEquivalent: "q")
+            let quit = NSMenuItem(title: L10n.string("menu.quit", locale: model.locale), action: #selector(quitFromMenu), keyEquivalent: "q")
             quit.target = self
             menu.addItem(quit)
             statusItem.menu = menu
@@ -97,7 +97,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let view = SettingsView(model: model)
         let hosting = NSHostingController(rootView: view)
         let window = NSWindow(contentViewController: hosting)
-        window.title = model.language == .chinese ? "DualTime 设置" : "DualTime Settings"
+        window.title = L10n.string("settings.title", locale: model.locale)
         window.styleMask = [.titled, .closable, .resizable]
         window.minSize = NSSize(width: 480, height: 520)
         window.setContentSize(NSSize(width: 480, height: 520))

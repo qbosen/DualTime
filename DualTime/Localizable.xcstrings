@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "language.chinese" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Chinese" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "中文" } }
+      }
+    },
+    "language.english" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "English" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "英文" } }
+      }
+    },
+    "menu.openSettings" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open Settings" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开设置" } }
+      }
+    },
+    "menu.quit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quit" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "退出" } }
+      }
+    },
+    "settings.display.flashSeparators" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Flash the time separators" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "闪烁时间分隔符" } }
+      }
+    },
+    "settings.display.showDate" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show date" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示日期" } }
+      }
+    },
+    "settings.display.showSeconds" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Display the time with seconds" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示秒" } }
+      }
+    },
+    "settings.display.showWeekday" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show day of the week" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示星期" } }
+      }
+    },
+    "settings.display.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Time display" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "时间显示" } }
+      }
+    },
+    "settings.language" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Language" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "语言" } }
+      }
+    },
+    "settings.launchAtLogin" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Launch at login" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "登录时启动" } }
+      }
+    },
+    "settings.quit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quit DualTime" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "退出应用" } }
+      }
+    },
+    "settings.timeZone.searchPlaceholder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search city or time zone" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "搜索城市或时区" } }
+      }
+    },
+    "settings.timeZone.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Display time zone" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示时区" } }
+      }
+    },
+    "settings.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "DualTime Settings" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "DualTime 设置" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

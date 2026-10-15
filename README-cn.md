@@ -19,7 +19,7 @@ DualTime 是一个原生 macOS 菜单栏应用，用于显示一个可自定义�
 - 使用系统 San Francisco 字体、等宽数字和右对齐文本
 - 支持搜索 IANA 时区列表，常用城市置顶
 - 自动处理夏令时和 UTC 偏移
-- 支持中文和 English 设置界面
+- 使用集中管理的 `Localizable.xcstrings` String Catalog，支持中文和 English 设置界面
 - 可通过 `SMAppService` 设置登录时启动
 - 使用 accessory application 模式常驻菜单栏，不显示在 Dock 中
 - 左键打开设置，右键提供设置和退出操作
@@ -54,3 +54,7 @@ xcodebuild -project DualTime.xcodeproj -scheme DualTime -configuration Debug -sd
 项目默认构建未签名的本地 `.app`。从其他机器下载或复制未签名应用后，macOS 可能显示安全提示。公开分发需要 Developer ID 签名和 notarization，本仓库暂未配置这些流程。
 
 仓库不会提交 `dist/DualTime.app`，应用通过上面的 Release 构建命令重新生成。构建目录、Xcode 用户状态文件和 Finder 元数据已加入 Git 忽略规则。
+
+## 本地化
+
+界面文案集中维护在 `DualTime/Localizable.xcstrings` 中。SwiftUI 界面直接使用本地化 key，AppKit 菜单项和窗口标题通过 `L10n` 辅助层读取翻译。增加新语言时，只需要在 String Catalog 中添加翻译，并在 `AppLanguage` 中增加对应 case。日期格式规则与界面翻译分开维护。
