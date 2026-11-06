@@ -3,8 +3,62 @@ import Combine
 import Foundation
 import ServiceManagement
 
+enum PointerExitDelay: Double, CaseIterable, Identifiable {
+    case immediately = 0
+    case halfSecond = 0.5
+    case oneSecond = 1
+    case twoSeconds = 2
+    case threeSeconds = 3
+    case fiveSeconds = 5
+    case never = -1
+
+    var id: Double { rawValue }
+    var seconds: TimeInterval? { self == .never ? nil : rawValue }
+    var localizationKey: String {
+        switch self {
+        case .immediately: return "behavior.delay.immediately"
+        case .halfSecond: return "behavior.delay.halfSecond"
+        case .oneSecond: return "behavior.delay.oneSecond"
+        case .twoSeconds: return "behavior.delay.twoSeconds"
+        case .threeSeconds: return "behavior.delay.threeSeconds"
+        case .fiveSeconds: return "behavior.delay.fiveSeconds"
+        case .never: return "behavior.delay.never"
+        }
+    }
+}
+
+struct PointerExitCountdown {
+    private var exitedAt: TimeInterval?
+    private var previousDelay: PointerExitDelay?
+
+    mutating func shouldClose(pointerInside: Bool, at now: TimeInterval, delay: PointerExitDelay) -> Bool {
+        if previousDelay != delay {
+            exitedAt = nil
+            previousDelay = delay
+        }
+        guard !pointerInside, let seconds = delay.seconds else {
+            exitedAt = nil
+            return false
+        }
+        if exitedAt == nil { exitedAt = now }
+        return now - (exitedAt ?? now) >= seconds
+    }
+}
+
 @MainActor
 final class AppModel: ObservableObject {
+    @Published var pointerExitDelay: PointerExitDelay {
+        didSet { defaults.set(pointerExitDelay.rawValue, forKey: Keys.pointerExitDelay) }
+    }
+    @Published var closeOnOutsideClick: Bool {
+        didSet { defaults.set(closeOnOutsideClick, forKey: Keys.closeOnOutsideClick) }
+    }
+    @Published var worldClocks: [WorldClock] {
+        didSet { if let data = try? JSONEncoder().encode(worldClocks) { defaults.set(data, forKey: Keys.worldClocks) } }
+    }
+    @Published var clockListFormat: ClockListFormat {
+        didSet { if let data = try? JSONEncoder().encode(clockListFormat) { defaults.set(data, forKey: Keys.clockListFormat) } }
+    }
     @Published var timeZoneIdentifier: String {
         didSet { defaults.set(timeZoneIdentifier, forKey: Keys.timeZoneIdentifier); recalculateDisplayWidth(); refresh() }
     }
@@ -33,8 +87,13 @@ final class AppModel: ObservableObject {
     private let defaults: UserDefaults
     private var timer: Timer?
     private var observers: [NSObjectProtocol] = []
+    private var localizedZoneNames: [String: String] = [:]
 
     private enum Keys {
+        static let pointerExitDelay = "pointerExitDelay"
+        static let closeOnOutsideClick = "closeOnOutsideClick"
+        static let worldClocks = "worldClocks"
+        static let clockListFormat = "clockListFormat"
         static let timeZoneIdentifier = "timeZoneIdentifier"
         static let language = "language"
         static let launchAtLogin = "launchAtLogin"
@@ -47,6 +106,18 @@ final class AppModel: ObservableObject {
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
+        self.pointerExitDelay = (defaults.object(forKey: Keys.pointerExitDelay) as? Double)
+            .flatMap(PointerExitDelay.init(rawValue:)) ?? .fiveSeconds
+        self.closeOnOutsideClick = defaults.object(forKey: Keys.closeOnOutsideClick) as? Bool ?? true
+        let storedClocks = defaults.data(forKey: Keys.worldClocks)
+            .flatMap { try? JSONDecoder().decode([WorldClock].self, from: $0) }?
+            .filter { TimeZone(identifier: $0.timeZoneIdentifier) != nil } ?? [
+                WorldClock(timeZoneIdentifier: "Asia/Shanghai"),
+                WorldClock(timeZoneIdentifier: "America/Los_Angeles")
+            ]
+        self.worldClocks = storedClocks.isEmpty ? [WorldClock(timeZoneIdentifier: "Asia/Shanghai")] : storedClocks
+        self.clockListFormat = defaults.data(forKey: Keys.clockListFormat)
+            .flatMap { try? JSONDecoder().decode(ClockListFormat.self, from: $0) } ?? ClockListFormat()
         let systemIdentifier = TimeZone.current.identifier
         let storedIdentifier = defaults.string(forKey: Keys.timeZoneIdentifier) ?? systemIdentifier
         self.timeZoneIdentifier = TimeZone(identifier: storedIdentifier) == nil ? systemIdentifier : storedIdentifier
@@ -167,13 +238,11 @@ final class AppModel: ObservableObject {
     }
 
     private func localizedName(for identifier: String) -> String {
-        let locale = language.locale
-        let components = identifier.split(separator: "/").map(String.init)
-        let city = components.last?.replacingOccurrences(of: "_", with: " ") ?? identifier
-        if let localized = locale.localizedString(forIdentifier: identifier), localized != identifier {
-            return localized
-        }
-        return city
+        let key = "\(language.rawValue):\(identifier)"
+        if let name = localizedZoneNames[key] { return name }
+        let name = WorldClock(timeZoneIdentifier: identifier).name(style: .full, language: language)
+        localizedZoneNames[key] = name
+        return name
     }
 
     private func offsetName(for identifier: String) -> String {

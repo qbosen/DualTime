@@ -1,6 +1,471 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+"settings.tab.behavior": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Behavior"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "行为"
+        }
+      }
+    }
+  },
+  "behavior.rehide": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Hide time panel"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "重新隐藏"
+        }
+      }
+    }
+  },
+  "behavior.pointerExit": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "When the pointer leaves the clock or panel"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "指针离开时钟或面板时"
+        }
+      }
+    }
+  },
+  "behavior.outsideClick": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "When clicking elsewhere"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "点击其他位置时"
+        }
+      }
+    }
+  },
+  "behavior.hint": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Moving back to the clock or panel cancels the countdown. Never disables pointer-exit hiding only. Click the clock again or press Esc to close the panel."
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "移回时钟或面板会取消倒计时。“从不”仅关闭指针离开后的自动隐藏。再次点击时钟或按 Esc 仍可关闭面板。"
+        }
+      }
+    }
+  },
+  "behavior.delay.immediately": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Immediately"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "立即"
+        }
+      }
+    }
+  },
+  "behavior.delay.halfSecond": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "After 0.5 seconds"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "0.5 秒后"
+        }
+      }
+    }
+  },
+  "behavior.delay.oneSecond": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "After 1 second"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "1 秒后"
+        }
+      }
+    }
+  },
+  "behavior.delay.twoSeconds": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "After 2 seconds"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "2 秒后"
+        }
+      }
+    }
+  },
+  "behavior.delay.threeSeconds": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "After 3 seconds"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "3 秒后"
+        }
+      }
+    }
+  },
+  "behavior.delay.fiveSeconds": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "After 5 seconds"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "5 秒后"
+        }
+      }
+    }
+  },
+  "behavior.delay.never": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Never"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "从不"
+        }
+      }
+    }
+  },
+    "clocks.reorder": {"localizations": {"en": {"stringUnit": {"state": "translated", "value": "Drag to reorder"}}, "zh-Hans": {"stringUnit": {"state": "translated", "value": "拖动排序"}}}},
+"settings.tab.menuBar": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Menu Bar"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "菜单栏"
+        }
+      }
+    }
+  },
+  "settings.tab.clocks": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Time Zones"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "时区列表"
+        }
+      }
+    }
+  },
+  "settings.tab.general": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "General"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "通用"
+        }
+      }
+    }
+  },
+  "clocks.add": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Add Time Zone"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "添加时区"
+        }
+      }
+    }
+  },
+  "clocks.cancel": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Cancel"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "取消"
+        }
+      }
+    }
+  },
+  "clocks.customName": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Custom name"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "自定义名称"
+        }
+      }
+    }
+  },
+  "clocks.moveUp": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Move up"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "上移"
+        }
+      }
+    }
+  },
+  "clocks.moveDown": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Move down"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "下移"
+        }
+      }
+    }
+  },
+  "clocks.remove": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Remove"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "移除"
+        }
+      }
+    }
+  },
+  "clocks.orderHint": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Drag the handle or use the arrows to reorder. Keep at least one time zone."
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "拖动手柄或使用箭头调整顺序，至少保留一个时区。"
+        }
+      }
+    }
+  },
+  "clocks.nameStyle": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Name display"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "名称显示"
+        }
+      }
+    }
+  },
+  "clocks.name.full": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Full name"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "全称"
+        }
+      }
+    }
+  },
+  "clocks.name.abbreviation": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Abbreviation"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "缩写"
+        }
+      }
+    }
+  },
+  "clocks.name.custom": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Custom name"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "自定义名称"
+        }
+      }
+    }
+  },
+  "clocks.dateStyle": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Date format"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "日期格式"
+        }
+      }
+    }
+  },
+  "clocks.use24Hour": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "24-hour time"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "24 小时制"
+        }
+      }
+    }
+  },
+  "clocks.preview": {
+    "localizations": {
+      "en": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "Preview"
+        }
+      },
+      "zh-Hans": {
+        "stringUnit": {
+          "state": "translated",
+          "value": "预览"
+        }
+      }
+    }
+  },
     "language.chinese" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Chinese" } },

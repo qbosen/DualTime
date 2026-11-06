@@ -4,7 +4,7 @@
 
 DualTime is a native macOS menu bar app that shows a second clock using a configurable time zone. It keeps the system menu bar style and displays the configured time beside the system clock as closely as macOS allows.
 
-The app is designed for a single configured time zone. The selected time zone is stored as an IANA identifier, so daylight-saving rules and offset changes are handled by the system time-zone database.
+The menu bar shows one configured time zone. Left click opens a live list of time zones, starting with Shanghai and Los Angeles. Time zones are stored as IANA identifiers, so daylight-saving rules and offset changes are handled by the system time-zone database.
 
 ## Features
 
@@ -22,7 +22,12 @@ The app is designed for a single configured time zone. The selected time zone is
 - English and Chinese UI through the centralized `Localizable.xcstrings` String Catalog
 - Optional launch at login through `SMAppService`
 - Accessory application that stays in the menu bar and does not appear in the Dock
-- Settings open on left click; right click provides settings and quit
+- Left click shows only time-zone names, numeric dates, weekdays, and times; right click provides settings and quit
+- Add, remove, and reorder time zones by dragging or using arrows
+- Localized full city names, stable abbreviations such as SH/LOS, or custom names
+- Independent list formatting: MM/DD, DD/MM, or YYYY-MM-DD; optional weekdays and seconds; 12/24-hour time
+- Settings organized into Menu Bar, Time Zones, Behavior, and General tabs
+- Hide the time panel immediately or after a delay when the pointer leaves, or choose Never; closing on outside clicks is configured separately
 
 ## Requirements
 
